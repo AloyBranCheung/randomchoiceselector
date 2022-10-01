@@ -35,10 +35,13 @@ function noHighlightTag(tag) {
 }
 
 function randomSelect() {
+  // if re-used, remove currently selected
   if (document.querySelector(".container_selected")) {
     document.querySelector(".container_selected").remove();
   }
+
   const times = 30;
+  textarea.setAttribute("disabled", "true");
 
   // highlight/un-highlight random tags
   const interval = setInterval(() => {
@@ -51,6 +54,7 @@ function randomSelect() {
 
   // choose and highlight a random tag
   setTimeout(() => {
+    textarea.removeAttribute("disabled");
     clearInterval(interval);
     setTimeout(() => {
       const randomTag = pickRandomTag();
