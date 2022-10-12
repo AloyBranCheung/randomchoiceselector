@@ -1,7 +1,8 @@
 const tagsEl = document.querySelector(".tags");
 const textarea = document.querySelector("textarea");
-const startButton = document.querySelector(".container_startButton");
+const startButton = document.querySelector("#go");
 const container = document.querySelector(".container");
+const blind75 = document.querySelector("#blind75");
 
 textarea.focus();
 
@@ -82,5 +83,13 @@ textarea.addEventListener("keyup", (e) => {
 
 startButton.addEventListener("click", (e) => {
   textarea.value = "";
+  randomSelect();
+});
+
+blind75.addEventListener("click", (e) => {
+  textarea.value = "";
+  textarea.value =
+    "Array: Two Sum, Array: Container Duplicate, Array: Valid Anagram, Array: Group Anagrams, Array: Top K Frequent Elements, Array: Product of Array Except Self, Array: Encode and Decode Strings, Array: Longest Consecutive Sequence, Stack: Valid Parentheses, Binary Search: Search in Rotate Sorted Array, Binary Search: Find Minimum in Rotated Sorted Array, Linked List: Reverse Linked LIst, Linked List: Merge Two Sorted Lists, Linked List: Reorder List, Linked List: Remove Nth Node from End of List, Linked List: Linked List Cycle, Linked List: Merge K Sorted Lists, Trees: Invert Binary Tre, Trees: Maximum Depth of Binary Tree, Trees: Same Tree, Trees: Subtree of Another Tree, Heap/Priority Queue: Find Median from Data Stream";
+  createTags(textarea.value);
   randomSelect();
 });
